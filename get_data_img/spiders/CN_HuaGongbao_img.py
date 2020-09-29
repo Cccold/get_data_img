@@ -133,5 +133,4 @@ class CnHuagongbaoImgSpider(scrapy.Spider):
         item['uuid'] = hashlib.md5(item['url'].encode("utf-8") + item['image_url'].encode("utf-8")).hexdigest()
         item['day'] =  get_date2(int(time.time()))
         item['plate'] = doc('title').text()
-        # yield item
-        print(item['uuid'])
+        yield item
